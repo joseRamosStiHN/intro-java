@@ -8,6 +8,15 @@ public class Materia {
     private double puntos;
     private String alumnoCuenta;
 
+    public Materia(){}
+
+    public Materia(String alumnoCuenta, Long id, String nombre, double puntos) {
+        this.alumnoCuenta = alumnoCuenta;
+        this.id = id;
+        this.nombre = nombre;
+        this.puntos = puntos;
+    }
+
     public String getAlumnoCuenta() {
         return alumnoCuenta;
     }

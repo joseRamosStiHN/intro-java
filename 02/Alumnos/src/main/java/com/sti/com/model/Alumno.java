@@ -12,6 +12,18 @@ public class Alumno {
     private String departamento;
     private String centroEstudio;
 
+    public Alumno(){}
+
+    public Alumno(String carrera, String centroEstudio, String departamento, int edad, List<Materia> materias, String nombre, String numCuenta) {
+        this.carrera = carrera;
+        this.centroEstudio = centroEstudio;
+        this.departamento = departamento;
+        this.edad = edad;
+        this.materias = materias;
+        this.nombre = nombre;
+        this.numCuenta = numCuenta;
+    }
+
     private List<Materia> materias;
 
     public String getCarrera() {
