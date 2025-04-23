@@ -28,6 +28,11 @@ public class Student {
 
     private LocalDate lastUpdate;
 
-    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Subject> subjects;
+    // n+1 lazy
+   // @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = false)
+   // private List<Course> courses;
+
+    @OneToMany(mappedBy = "student")
+    private List<CourseRating> ratings;
+
 }
