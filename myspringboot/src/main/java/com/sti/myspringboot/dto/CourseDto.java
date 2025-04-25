@@ -11,7 +11,7 @@ public class CourseDto {
 
     private Long id;
     private String name;
-
+    private Long rating;
     private LocalTime time;
     private int capacity;
 

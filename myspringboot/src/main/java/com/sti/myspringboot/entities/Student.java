@@ -44,7 +44,8 @@ public class Student {
     // n+1 lazy
    // @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = false)
    // private List<Course> courses;
-
+    // Lazy -> se hace el query
+    //eager -> se hace el query desde el inicio
     @OneToMany(mappedBy = "student")
     private List<CourseRating> ratings;
 

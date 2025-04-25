@@ -10,6 +10,8 @@ import java.util.List;
 public interface IStudentService {
 
     List<StudentByCourse> getAllStudentWithCourse();
+    StudentByCourse getAllStudentWithCourseById(Long id);
+    StudentByCourse getAllStudentWithCourseByAccountNumber(Long accountNumber);
 
     List<StudentDto> getStudent();
 
