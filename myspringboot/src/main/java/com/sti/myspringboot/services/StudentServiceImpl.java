@@ -8,6 +8,8 @@ import com.sti.myspringboot.entities.Student;
 import com.sti.myspringboot.repositories.IStudentRepository;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 import org.slf4j.Logger;
@@ -47,6 +49,8 @@ public class StudentServiceImpl implements IStudentService{
 
     @Override
     public StudentByCourse getAllStudentWithCourseById(Long id) {
+        String currentUser = getCurrentUser();
+        logger.info("the current user is {}", currentUser);
         logger.info("looking for student with id {}", id);
         //validate if exit
         Student student = studentRepository.findById(id)
@@ -112,6 +116,11 @@ public class StudentServiceImpl implements IStudentService{
             dto.setRating(r.getRating());
             return dto;
         }).toList();
+    }
+
+    private String getCurrentUser() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        return  authentication.getPrincipal().toString();
     }
 
 }
